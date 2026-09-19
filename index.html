@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uxip78 Downloads</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #0b0b0f;
+            color: white;
+        }
+
+        header {
+            padding: 35px 20px;
+            text-align: center;
+            background: #111118;
+            border-bottom: 1px solid #292936;
+        }
+
+        header h1 {
+            font-size: 35px;
+        }
+
+        header p {
+            color: #999;
+            margin-top: 8px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .search {
+            width: 100%;
+            padding: 15px;
+            margin-bottom: 25px;
+            border-radius: 10px;
+            border: 1px solid #333;
+            background: #15151d;
+            color: white;
+            outline: none;
+        }
+
+        .downloads {
+            display: grid;
+            gap: 15px;
+        }
+
+        .card {
+            background: #15151d;
+            border: 1px solid #292936;
+            border-radius: 15px;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .info h2 {
+            margin-bottom: 7px;
+        }
+
+        .info p {
+            color: #999;
+        }
+
+        .version {
+            font-size: 13px;
+            color: #777;
+            margin-top: 6px;
+        }
+
+        .download {
+            background: #5865f2;
+            color: white;
+            text-decoration: none;
+            padding: 12px 18px;
+            border-radius: 9px;
+            font-weight: bold;
+        }
+
+        .download:hover {
+            background: #4752c4;
+        }
+
+        footer {
+            text-align: center;
+            color: #666;
+            padding: 40px;
+        }
+
+        @media (max-width: 600px) {
+            .card {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 15px;
+            }
+
+            .download {
+                width: 100%;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>Uxip78 Downloads</h1>
+    <p>Centro de descargas</p>
+</header>
+
+<div class="container">
+
+    <input
+        type="text"
+        id="search"
+        class="search"
+        placeholder="🔎 Buscar archivo..."
+        onkeyup="buscar()"
+    >
+
+    <div class="downloads" id="downloads">
+
+        <div class="card">
+            <div class="info">
+                <h2>Diagnóstico Tool</h2>
+                <p>Herramienta de diagnóstico para Windows.</p>
+                <div class="version">Versión 1.0</div>
+            </div>
+
+            <a class="download"
+               href="https://TU-ENLACE-AQUI"
+               target="_blank">
+                📥 Descargar
+            </a>
+        </div>
+
+        <div class="card">
+            <div class="info">
+                <h2>Mi aplicación</h2>
+                <p>Descripción de tu archivo.</p>
+                <div class="version">Versión 1.2</div>
+            </div>
+
+            <a class="download"
+               href="https://TU-ENLACE-AQUI"
+               target="_blank">
+                📥 Descargar
+            </a>
+        </div>
+
+    </div>
+</div>
+
+<footer>
+    © 2026 Uxip78
+</footer>
+
+<script>
+function buscar() {
+
+    let texto = document
+        .getElementById("search")
+        .value
+        .toLowerCase();
+
+    let tarjetas = document
+        .querySelectorAll(".card");
+
+    tarjetas.forEach(function(tarjeta) {
+
+        let contenido = tarjeta
+            .innerText
+            .toLowerCase();
+
+        if (contenido.includes(texto)) {
+            tarjeta.style.display = "flex";
+        } else {
+            tarjeta.style.display = "none";
+        }
+
+    });
+}
+</script>
+
+</body>
+</html>
